@@ -55,19 +55,24 @@ else:
 fruits = ["apple","banana"]
 
 action = str(input("Enter what do you want to do (add/remove): "))
+removed_fruit = str(input("Enter the fruit that you want to remove from the list(banana or apple):"))
 
-if action == "remove":
-
+if removed_fruit == "banana":
     for fruit in fruits:
-        while fruits == "banana":
+        while "banana" in fruits:
             fruits.remove("banana")
             print(fruits)
             
-    elif action == "remove":
-        while fruits == "apple":
-                fruits.remove("apple")
-                print(fruits)
-    elif action == "add":
+else :
+    for fruit in fruits:
+        while "apple" in fruits:
+            fruits.remove("apple")
+            print(fruits)
+
+    
+if action == "add":
     new_fruit = str(input("Enter the fruit that you wnat to add to the list:"))
-        fruits.add(new_fruit)
-        print(fruits)
+    fruits.append(new_fruit)
+    print(fruits)
+    
+
