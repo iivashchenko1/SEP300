@@ -52,6 +52,13 @@ else:
 
 
 #Task 4
+"""Write a Python program that:
+1. Starts with a set containing the words “apple” and “banana”.
+2. Then, it starts a loop that asks the user what to do: add more fruits to the set,
+remove fruits from the set, check if a fruit has been added to the set, or quit.
+3. After the user has picked a choice, the loop should ask for more info (if required)
+and output what is needed"""
+
 fruits = ["apple","banana"]
 
 action = str(input("Enter what do you want to do (add/remove): "))
