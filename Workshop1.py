@@ -59,27 +59,36 @@ remove fruits from the set, check if a fruit has been added to the set, or quit.
 3. After the user has picked a choice, the loop should ask for more info (if required)
 and output what is needed"""
 
-fruits = ["apple","banana"]
 
-action = str(input("Enter what do you want to do (add/remove): "))
-removed_fruit = str(input("Enter the fruit that you want to remove from the list(banana or apple):"))
+fruits = {"apple", "banana"}
 
-if removed_fruit == "banana":
-    for fruit in fruits:
-        while "banana" in fruits:
-            fruits.remove("banana")
-            print(fruits)
-            
-else :
-    for fruit in fruits:
-        while "apple" in fruits:
-            fruits.remove("apple")
-            print(fruits)
-
-    
-if action == "add":
-    new_fruit = str(input("Enter the fruit that you wnat to add to the list:"))
-    fruits.append(new_fruit)
-    print(fruits)
+while True:
+    print("Current fruits:", fruits)
+    action = input("What do you want to do? (add/remove/check/quit): ").lower()
+    if action == "add":
+        new_fruit = input("Enter the fruit you want to add: ")
+        if new_fruit:
+            fruits.add(new_fruit)
+            print("Added", new_fruit, ". Fruits are now:", fruits)
+        else:
+            print("No fruit entered.")
+    elif action == "remove":
+        rem_fruit = input("Enter the fruit you want to remove: ")
+        if rem_fruit in fruits:
+            fruits.remove(rem_fruit)
+            print("Removed", rem_fruit, ". Fruits are now:", fruits)
+        else:
+            print(rem_fruit, "is not in the set.")
+    elif action == "check":
+        check_fruit = input("Enter the fruit to check: ")
+        if check_fruit in fruits:
+            print(check_fruit, "is in the set.")
+        else:
+            print(check_fruit, "is NOT in the set.")
+    elif action == "quit":
+        print("Quitting. Final fruits:", fruits)
+        break
+    else:
+        print("Invalid action. Please choose add, remove, check, or quit.")
     
 
